@@ -4,6 +4,7 @@ namespace YoHang88\LetterAvatar;
 
 use Intervention\Image\Gd\Font;
 use Intervention\Image\Gd\Shapes\CircleShape;
+use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
 
 class LetterAvatar
@@ -65,7 +66,7 @@ class LetterAvatar
     public function __construct(string $name, string $shape = 'circle', int $size = 48)
     {
         $this->setName($name);
-        $this->setImageManager(new ImageManager());
+        $this->setImageManager(new ImageManager(new Driver()));
         $this->setShape($shape);
         $this->setSize($size);
     }
